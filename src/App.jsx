@@ -6,9 +6,9 @@ import "./App.css";  // Para estilos globales si los tienes
 function App() {
   return (
     <div className="App">
-      <Header />  {/* Este es el encabezado que acabamos de crear */}
+      <Header/>  {/* Este es el encabezado que acabamos de crear */}
       <Home/>
-      <Footer /> {/* Este es el pie de página que acabamos de crear */}  
+      <Footer/> {/* Este es el pie de página que acabamos de crear */}  
     </div>
   );
 }
