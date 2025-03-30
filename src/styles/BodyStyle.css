@@ -1,0 +1,149 @@
+/* Estilos generales del cuerpo */
+.body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    /* Asegúrate de definir una fuente */
+}
+
+/* Sección de proyectos */
+.projects {
+    /* Puedes agregar más estilos aquí si es necesario */
+}
+
+.projects h2 {
+    font-size: 3em;
+    /* Ajusté el tamaño para que sea más legible */
+    margin: 10px;
+    padding: 5px;
+}
+
+/* Contenedor de la lista de proyectos */
+.projects-list {
+    display: flex;
+    justify-content: center;
+    /* Centra los proyectos en la página */
+    flex-wrap: wrap;
+    /* Asegura que los proyectos se acomoden bien en pantallas más pequeñas */
+}
+
+/* Estilo para cada proyecto */
+.project {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    max-width: 300px;
+    /* Limita el ancho de los proyectos */
+}
+
+.project img {
+    border: 0.7px solid #353434;
+    border-radius: 5px;
+    max-width: 100%;
+    /* Asegura que las imágenes no se salgan del contenedor */
+    height: auto;
+}
+
+.project h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.project p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+/* Sección Sobre mí */
+.about {
+    font-size: 45px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;  /* Limitar el ancho para mejorar la legibilidad */
+    background-c2emolor: #f4f4f4;  /* Color de fondo suave */
+    border-radius: 8px;  /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave para resaltar la sección */
+}
+
+.about h2 {
+    font-size: 1em;  /* Tamaño de fuente del título */
+    color: #333;  /* Color de texto oscuro */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about p {
+    font-size: 0.6em;
+    line-height: 1.6;
+    color: #555;  /* Color de texto más suave */
+    margin-bottom: 15px;
+    text-align: justify;  /* Alineación de texto más limpia */
+    text-indent: 1em;  /* Sangría en el primer párrafo */
+}
+
+.about ul {
+    font-size: 0.5em;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.about ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.about ul li::before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #4c524c;  /* Verde para los iconos */
+}
+
+.about .about-text {
+    margin-top: 30px;
+    font-size: 1.3em;
+    font-style: italic;  /* Texto en cursiva para un toque diferente */
+    color: #444;  /* Color de texto intermedio */
+    text-align: center;
+}
+
+
+/* Sección de contacto */
+.contact {
+    padding: 20px;
+    background-color: #f7f7f7;
+    /* Fondo gris claro para la sección de contacto */
+}
+
+.contact h2 {
+    font-size: 2.5em;
+}
+
+.contact ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.contact ul li {
+    margin: 10px;
+}
+
+/* Estilo para las imágenes de los enlaces de contacto */
+.contact ul li a img {
+    height: auto;
+    max-width: 50px;
+    transition: transform 0.3s ease;
+    /* Añadí una transición para el efecto hover */
+}
+
+.contact ul li a img:hover {
+    transform: scale(1.1);
+    /* Agranda la imagen cuando se pasa el mouse */
+}
+
+/* Estilo para el contenedor de los íconos en el formulario de contacto */
+.contact-form {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
