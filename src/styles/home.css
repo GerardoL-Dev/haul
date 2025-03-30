@@ -1,0 +1,129 @@
+/* home.css */
+
+/* Contenedor general de la página de inicio */
+.home-container {
+    font-family: Arial, sans-serif;
+    padding: 0 20px;
+    background-color: #f1f1f1;
+}
+
+/* Estilos para la sección hero */
+.hero {
+    background-color: #091f30;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #99e9f2;
+    color: #091f30;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #3c6f8c;
+    color: white;
+}
+
+/* Estilos para los programas académicos */
+.programs {
+    margin-bottom: 50px;
+}
+
+.programs h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.programs-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.program-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.program-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.program-button {
+    padding: 8px 15px;
+    background-color: #091f30;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.program-button:hover {
+    background-color: #3c6f8c;
+}
+
+/* Estilos para la sección de características */
+.features {
+    margin-bottom: 50px;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.feature-cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 1rem;
+}

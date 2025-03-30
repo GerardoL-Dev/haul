@@ -1,18 +1,24 @@
 import React from 'react';
-import '../styles/HeaderStyle.css';
-import fotoPerfil from '../images/face.jfif';
+import '../styles/header.css';
+import logo from '../assets/images/logo-central.png';
+import Navbar from './Navbar.jsx';
 
-const Header = () =>{
-    return(
+const Header = () => {
+    return (
         <header className="header">
             <div className="header-content">
-                <h1>Gerardo Leivas</h1>
-                <p>Full Stack Developer</p>
+                <div className="title-container">
+                    <div>
+                        <img src={logo} alt="Logo" className="logo" />
+                    </div>
+                    <div>
+                        <h1 className="title">Haul Mawr</h1>
+                        <p className="subtitle">Instituto de Estudios superiores</p>
+                    </div>
+                </div>
             </div>
-            <div className='header-image'>
-            <img src={fotoPerfil} alt="Gerardo Leivas" />
-            </div>            
-        </header>        
+            <Navbar/>
+        </header>
     );
 };
 

@@ -1,0 +1,56 @@
+/* Estilos generales del footer */
+.footer {
+    background-color: #091f30;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Contenedor principal del contenido del footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Estilos de la sección izquierda del footer */
+.footer-left {
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+/* Estilos de la sección derecha del footer */
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Estilos para los enlaces sociales */
+.footer-social {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-social li {
+    text-align: center;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #99e9f2;
+}

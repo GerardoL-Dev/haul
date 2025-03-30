@@ -1,0 +1,105 @@
+/* Estilos generales del navbar */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* Contenedor principal del contenido dentro del navbar */
+.navbar-content {
+}
+
+/* Lista de navegación */
+.navbar-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navbar-list li {
+    text-align: center;
+    color: #091f30;
+    text-decoration: none;
+    position: relative; /* Necesario para que el submenú se posicione correctamente */
+}
+
+/* Estilo para los links del navbar */
+.navbar-list a {
+    color: #091f30;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+}
+
+/* Estilos para el submenú */
+.submenu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1;
+}
+
+.submenu-item:hover .submenu {
+    display: block; /* Mostrar al pasar el mouse */
+}
+
+/* Estilos para los elementos dentro del submenú */
+.submenu li {
+    padding: 8px 12px;
+}
+
+.submenu li a {
+    color: #091f30;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Contenedor de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 1em;
+}
+
+/* Campo de entrada del buscador */
+.search-input {
+    padding: 5px 13px;
+    border-radius: 5px;
+}
+
+/* Botón de búsqueda */
+.navbar-search-button {
+    border: black 1px solid;
+    background-color: #091f30;
+    color: white;
+    padding: 5px 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar-search-button:hover {
+    background-color: #3c6f8c; /* Cambia el color de fondo al pasar el ratón */
+    color: white;
+}
+
+.navbar-search-button:active {
+    border: black 1px solid;
+    background-color: white;
+    color: #091f30;
+    padding: 5px 13px;
+    cursor: pointer;
+    border-radius: 5px;
+}

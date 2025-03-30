@@ -1,0 +1,72 @@
+/* Contenedor principal de las cartas */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column; /* Alineación vertical de las cartas */
+}
+
+/* Estilo para cada carta */
+.card {
+    width: 600px; /* Ajusta según sea necesario */
+    min-height: 400px; /* Asegura que todas las cartas tengan la misma altura mínima */
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Acomoda elementos en línea (imagen a la izquierda, texto a la derecha) */
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: slideIn 5s forwards;
+}
+
+/* Imagen dentro de la carta */
+.card-image {
+    width: 40%; /* La imagen ocupa el 40% del ancho */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+/* Contenedor del texto */
+.card-content {
+    width: 60%; /* Ocupa el resto del ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Título del estudiante */
+.card-content h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Descripción */
+.card-content p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Frase dentro de la carta */
+.card-phrase {
+    font-style: italic;
+    color: #777;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+/* Animación para el deslizamiento de las cartas */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
