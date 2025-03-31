@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className='navbar-content'>
                 <ul className="navbar-list">
-                    <li><Link to="/haul">Inicio</Link></li>
+                    <li><Link to="/">Inicio</Link></li>
                     <li><Link to="/about">Sobre Nosotros</Link></li>
 
                     <li className="submenu-item">
