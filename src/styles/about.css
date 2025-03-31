@@ -1,0 +1,86 @@
+/* about.css */
+
+.about-container {
+    font-family: 'Arial', sans-serif;
+    padding: 40px;
+    background-color: #f4f4f4; /* Fondo claro para contrastar */
+}
+
+.about-intro,
+.about-mission,
+.about-history {
+    margin-bottom: 40px;
+    background-color: #ffffff; /* Fondo blanco para secciones */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-intro h1,
+.about-mission h2,
+.about-history h2 {
+    color: #091f30; /* Color principal */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-intro p,
+.about-mission p,
+.about-history p {
+    color: #555; /* Color de texto más suave */
+    line-height: 1.6;
+    font-size: 1.125rem;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.about-mission h2,
+.about-history h2 {
+    border-bottom: 2px solid #091f30; /* Línea de separación sutil */
+    padding-bottom: 10px;
+}
+
+.about-images {
+    text-align: center;
+}
+
+.about-images h2 {
+    color: #091f30;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.about-image {
+    width: 250px;  /* Tamaño más pequeño, 250px de ancho */
+    height: 250px; /* Mantenerlo cuadrado */
+    object-fit: cover;  /* Ajusta la imagen sin distorsionar */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.05); /* Efecto hover para las imágenes */
+}
+
+/* Sección de fondo con un gradiente sutil */
+.about-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #091f30 0%, #3c6f8c 100%);
+    opacity: 0.1;
+    z-index: -1; /* Lo coloca en el fondo */
+}

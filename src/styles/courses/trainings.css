@@ -1,0 +1,36 @@
+.trainings-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .trainings-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .training-card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    min-height: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  .training-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .training-card h2 {
+    font-size: 1.5em;
+    color: #091f30;  /* El color principal */
+  }
+  
+  .training-card p {
+    font-size: 1em;
+    color: #555;
+  }
+  

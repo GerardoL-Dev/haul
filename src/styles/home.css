@@ -127,3 +127,64 @@
 .feature-card p {
     font-size: 1rem;
 }
+
+/* Media Queries */
+
+/* Para pantallas de hasta 768px (tablets y móviles) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .programs-list,
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .program-card,
+    .feature-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+/* Para pantallas de hasta 480px (móviles pequeños) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .program-card,
+    .feature-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .program-card h3,
+    .feature-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .program-card p,
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
