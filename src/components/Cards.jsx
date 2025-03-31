@@ -43,7 +43,7 @@ const Cards = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentCard((prevCard) => (prevCard + 1) % cardsData.length);
-        }, 3000); // Cambia la carta cada 3 segundos
+        }, 10000); // Cambia la carta cada 10 segundos
 
         return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
     }, [cardsData.length]);
