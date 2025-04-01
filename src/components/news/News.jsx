@@ -5,7 +5,7 @@ const News = () => {
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
-    const API_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/news/science_and_environment/rss.xml";
+    const API_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://www.sciencenews.org/feed";
     
     const obtenerNoticias = async () => {
       try {
@@ -28,9 +28,18 @@ const News = () => {
           noticias.map((noticia, index) => (
             <li key={index} className="news-item">
               <h2><a href={noticia.link} target="_blank" rel="noopener noreferrer">{noticia.title}</a></h2>
-              <p className="pub-date"><strong>Fecha:</strong> {new Date(noticia.pubDate).toLocaleDateString()}</p>
+              <p><strong>Autor:</strong> {noticia.author}</p>
+              <p><strong>Fecha:</strong> {new Date(noticia.pubDate).toLocaleDateString()}</p>
               <p>{noticia.description}</p>
-              {noticia.enclosure && <img src={noticia.enclosure.thumbnail} alt="Imagen de la noticia" className="news-thumbnail" />}
+              
+              {/* Solo mostrar la imagen si existe */}
+              {noticia.thumbnail ? (
+                <img src={noticia.thumbnail} alt="Imagen de la noticia" className="news-thumbnail" />
+              ) : (
+                <div className="no-thumbnail-placeholder">Sin imagen disponible</div> // Mensaje cuando no hay imagen
+              )}
+              
+              <a href={noticia.link} target="_blank" rel="noopener noreferrer">Leer más</a>
             </li>
           ))
         ) : (
@@ -42,4 +51,3 @@ const News = () => {
 };
 
 export default News;
-

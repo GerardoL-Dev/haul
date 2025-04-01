@@ -1,107 +1,133 @@
 /* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.news-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* CSS Grid para la lista de noticias */
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Tres noticias por fila en pantallas grandes */
+  gap: 20px;
+  list-style-type: none;
+}
+
+.news-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido de cada noticia esté alineado verticalmente */
+  justify-content: space-between; /* Asegura que los elementos dentro de cada caja estén distribuidos */
+  height: auto; /* Elimina un valor fijo para la altura */
+}
+
+.news-item:hover {
+  transform: translateY(-5px); /* Efecto de elevación cuando pasa el mouse */
+}
+
+.news-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.news-item p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: #1e90ff;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+.news-thumbnail {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Limitar la altura para que las imágenes se ajusten */
+  object-fit: cover; /* Mantiene la calidad de la imagen sin distorsionarla */
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block; /* Para asegurarse de que la imagen esté alineada correctamente */
+}
+
+/* Estilo para noticias sin imagen */
+.no-thumbnail-placeholder {
+  background-color: #e0e0e0;
+  color: #777;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 768px) {
   .news-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 10px;
   }
-  
+
   .title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 1.8rem;
   }
-  
-  .news-list {
-    list-style-type: none;
-  }
-  
+
   .news-item {
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
   }
-  
+
   .news-item h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
   }
-  
-  .news-item p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-  }
-  
-  .news-item a {
-    text-decoration: none;
-    color: #1e90ff;
-  }
-  
-  .news-item a:hover {
-    text-decoration: underline;
-  }
-  
+
   .news-thumbnail {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 10px;
-    display: block;
+    max-height: 150px; /* Ajustamos la altura de la imagen en pantallas más pequeñas */
   }
-  
-  /* Media Queries para hacer el diseño responsivo */
-  @media (max-width: 768px) {
-    .news-container {
-      padding: 10px;
-    }
-  
-    .title {
-      font-size: 1.8rem;
-    }
-  
-    .news-item {
-      padding: 10px;
-    }
-  
-    .news-item h2 {
-      font-size: 1.3rem;
-    }
-  
-    .news-thumbnail {
-      max-width: 100%;
-    }
+}
+
+@media (max-width: 480px) {
+  .news-container {
+    padding: 5px;
   }
-  
-  @media (max-width: 480px) {
-    .news-container {
-      padding: 5px;
-    }
-  
-    .title {
-      font-size: 1.6rem;
-    }
-  
-    .news-item h2 {
-      font-size: 1.2rem;
-    }
-  
-    .news-item p {
-      font-size: 0.9rem;
-    }
+
+  .title {
+    font-size: 1.6rem;
   }
-  
+
+  .news-item h2 {
+    font-size: 1.2rem;
+  }
+
+  .news-item p {
+    font-size: 0.9rem;
+  }
+
+  .news-thumbnail {
+    max-height: 120px; /* Ajuste aún más pequeño en dispositivos móviles */
+  }
+}
