@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1em;
+    position: relative; /* Asegura que el z-index funcione correctamente */
 }
 
 .navbar-content {
@@ -19,7 +20,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-right: 2em;
-    gap: 10px; /* Espacio entre elementos */
+    gap: 10px;
 }
 
 .navbar-list li {
@@ -27,7 +28,7 @@
     color: #091f30;
     text-decoration: none;
     position: relative;
-    font-size: 1rem; /* Tamaño base */
+    font-size: 1rem;
     transition: font-size 0.3s ease;
 }
 
@@ -49,7 +50,7 @@
     list-style: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    z-index: 1;
+    z-index: 1000; /* Aumenta el z-index para que esté por encima de las imágenes */
     min-width: 150px;
 }
 

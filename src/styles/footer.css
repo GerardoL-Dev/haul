@@ -2,55 +2,109 @@
 .footer {
     background-color: #091f30;
     color: white;
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+    padding: 40px 0; /* Aumenta el padding para mejor espaciado */
+    font-size: 1rem; /* Tamaño de fuente base */
+    line-height: 1.6; /* Mejora la legibilidad */
 }
 
 /* Contenedor principal del contenido del footer */
 .footer-content {
     display: flex;
     justify-content: space-between;
-    width: 80%;
     max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido */
+    padding: 0 20px; /* Añade padding horizontal */
 }
 
 /* Estilos de la sección izquierda del footer */
 .footer-left {
-    font-size: 14px;
+    flex: 1; /* Permite que la sección izquierda crezca */
+    text-align: left; /* Alinea el texto a la izquierda */
     color: #d1d1d1;
+}
+
+.footer-left p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+}
+
+.footer-left a {
+    color: #99e9f2; /* Color de enlace */
+    text-decoration: none;
+}
+
+.footer-left a:hover {
+    text-decoration: underline; /* Subraya al pasar el ratón */
+}
+
+/* Estilos de la sección central del footer */
+.footer-center {
+    flex: 2; /* Permite que la sección central crezca más */
+    text-align: center; /* Centra el texto */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
+}
+
+.footer-nav li {
+    margin: 0 15px; /* Espacio entre elementos de la lista */
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #99e9f2;
 }
 
 /* Estilos de la sección derecha del footer */
 .footer-right {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex: 1; /* Permite que la sección derecha crezca */
+    text-align: right; /* Alinea el texto a la derecha */
+    color: #d1d1d1;
 }
 
-/* Estilos para los enlaces sociales */
-.footer-social {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
+.footer-right p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
 }
 
-.footer-social li {
-    text-align: center;
+.footer-right strong {
+    color: white; /* Resalta el texto importante */
 }
 
-.footer-social a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
+/* Estilos de la información de contacto */
+.footer-contact {
+    margin-top: 20px; /* Espacio superior */
 }
 
-.footer-social a:hover {
-    color: #99e9f2;
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Apila las secciones en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        text-align: center; /* Centra el texto */
+    }
+
+    .footer-left,
+    .footer-right {
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+        margin-bottom: 20px; /* Espacio entre secciones */
+    }
+
+    .footer-nav ul {
+        flex-direction: column; /* Apila los enlaces en pantallas pequeñas */
+        align-items: center; /* Centra los enlaces */
+    }
+
+    .footer-nav li {
+        margin: 10px 0; /* Espacio entre enlaces */
+    }
 }

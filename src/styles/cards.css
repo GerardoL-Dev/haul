@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgba(8, 13, 54, 0.7); /* Cartas en blanco para destacar */
+    background-color: rgba(0, 0, 0, 0.3); /* Cartas en blanco para destacar */
     border-radius: 5px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
     opacity: 0;
