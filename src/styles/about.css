@@ -4,10 +4,10 @@
   margin: 0;
   padding: 20px;
   background-image: url('../assets/images/haul-back.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #000000; /* Azul oscuro */
+  background-size: 150px auto;
+  background-repeat: repeat;
+  background-position: top left;
+  color: #000000;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto auto auto auto;
@@ -22,14 +22,14 @@
 
 .about-title {
   font-size: 2.5em;
-  color: #ffffff; /* Azul oscuro */
-  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8); /* Sombra gris claro */
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
 }
 
 .about-subtitle {
   font-size: 1.8em;
-  color: #ffffff; /* Azul oscuro */
-  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8); /* Sombra gris claro */
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
   margin-bottom: 20px;
 }
 
@@ -51,8 +51,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: center;
-  color: #ffffff; /* Azul oscuro */
-  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8); /* Sombra gris claro */
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
 }
 
 .intro-image,
@@ -66,13 +66,13 @@
 
 .mission-text {
   grid-column: 2;
-  color: #ffffff; /* Azul oscuro */
-  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8); /* Sombra gris claro */
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
 }
 
 .about-history .history-content {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide en dos columnas */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: center;
 }
@@ -80,8 +80,8 @@
 .about-history .history-content header,
 .about-history .history-content p {
   grid-column: 1;
-  color: #ffffff; /* Azul oscuro */
-  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8); /* Sombra gris claro */
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
 }
 
 .about-history .history-content figure {
@@ -103,8 +103,8 @@
 
 .carousel-image {
   width: 100%;
-  height: 100%; /* Se ajusta a la altura del contenedor sin distorsión */
-  object-fit: cover; /* Mantiene la proporción de la imagen */
+  height: 100%;
+  object-fit: cover;
 }
 
 .carousel-dots {
@@ -129,49 +129,79 @@
 }
 
 /* Media Queries para Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .about-intro,
+  .about-mission,
+  .about-history {
+      grid-template-columns: 1fr; /* Una sola columna en pantallas medianas */
+  }
+
   .intro-content,
   .mission-content,
   .history-content {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* Una sola columna en pantallas medianas */
   }
 
   .intro-image,
   .mission-image,
   .history-image {
-    grid-column: 1;
-    width: 100%;
-    margin: 20px 0;
+      grid-column: 1; /* Asegura que la imagen ocupe toda la columna */
+      width: 100%;
+      margin: 20px 0;
   }
 
   .mission-text {
-    grid-column: 1;
+      grid-column: 1; /* Asegura que el texto ocupe toda la columna */
   }
 
   .about-history .history-content {
-    grid-template-columns: 1fr; /* Una sola columna en móviles */
+      grid-template-columns: 1fr; /* Una sola columna en móviles */
   }
 
   .about-history .history-content figure {
-    grid-column: 1; /* Imagen debajo del texto */
+      grid-column: 1; /* Imagen debajo del texto */
+  }
+}
+
+@media (max-width: 992px) {
+  .about-title {
+      font-size: 2.2em;
+  }
+
+  .about-subtitle {
+      font-size: 1.6em;
   }
 
   .carousel-container {
-    width: 100%;
-    height: 300px;
+      width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+      font-size: 2em;
+  }
+
+  .about-subtitle {
+      font-size: 1.5em;
+  }
+
+  .carousel-container {
+      width: 100%;
+      height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .about-title {
-    font-size: 2em;
+      font-size: 1.8em;
   }
 
   .about-subtitle {
-    font-size: 1.5em;
+      font-size: 1.4em;
   }
 
   .carousel-container {
-    height: 250px;
+      height: 250px;
   }
 }
