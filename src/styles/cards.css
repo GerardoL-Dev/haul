@@ -12,12 +12,12 @@
     width: 80%; /* Aumenta el ancho para mejor lectura en desktop */
     max-width: 800px; /* Limita el ancho máximo */
     min-height: 250px; /* Altura mínima para asegurar espacio */
-    padding: 30px;
+    padding: 1px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.7); /* Cartas en blanco para destacar */
-    border-radius: 12px;
+    background-color: rgba(8, 13, 54, 0.7); /* Cartas en blanco para destacar */
+    border-radius: 5px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
     opacity: 0;
     animation: slideIn 0.8s ease-out forwards; /* Ajuste de la animación */
@@ -25,7 +25,7 @@
 }
 
 .card-image {
-    width: 38%; /* Imagen un poco más pequeña */
+    width: 28%; /* Imagen un poco más pequeña */
     height: auto;
     border-radius: 5px;
     margin-right: 25px;
@@ -41,22 +41,23 @@
 
 .card-content h2 {
     margin: 0 0 10px 0;
-    font-size: 3em; /* Título más grande */
-    color: #091f30; /* Color principal */
+    font-size: 2.3em; /* Título más grande */
+    color: #ffffff; /* Color principal */
     font-weight:300; /* Mayor peso de fuente */
+    text-shadow: #000000 0px 0px 5px; /* Sombra para destacar el texto */
 }
 
 .card-content p {
     margin: 8px 0;
-    color: #000000;
+    color: #ffffff;
     line-height: 1.6;
 }
 
 .card-phrase {
     font-style: italic;
-    color: #0b598d;
+    color: #ffffff;
     margin-top: 15px;
-    font-size: 1.1em;
+    font-size: 0.9em;
 }
 
 @keyframes slideIn {
