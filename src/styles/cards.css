@@ -1,111 +1,109 @@
+/* Estilos generales */
 .cards-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    flex-direction: column; /* Alineación vertical de las cartas */
+    flex-direction: column;
+    padding: 60px 20px;
+    
 }
 
-/* Estilo para cada carta */
 .card {
-    width: 600px; /* Ajusta según sea necesario */
-    min-height: 400px; /* Asegura que todas las cartas tengan la misma altura mínima */
-    padding: 20px;
+    width: 80%; /* Aumenta el ancho para mejor lectura en desktop */
+    max-width: 800px; /* Limita el ancho máximo */
+    min-height: 250px; /* Altura mínima para asegurar espacio */
+    padding: 30px;
     display: flex;
-    flex-direction: row; /* Acomoda elementos en línea (imagen a la izquierda, texto a la derecha) */
+    flex-direction: row;
     align-items: center;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.7); /* Cartas en blanco para destacar */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
     opacity: 0;
-    animation: slideIn 5s forwards;
+    animation: slideIn 0.8s ease-out forwards; /* Ajuste de la animación */
+    margin-bottom: 30px; /* Espacio entre cartas */
 }
 
-/* Imagen dentro de la carta */
 .card-image {
-    width: 40%; /* La imagen ocupa el 40% del ancho */
+    width: 38%; /* Imagen un poco más pequeña */
     height: auto;
-    border-radius: 8px;
-    margin-right: 15px;
+    border-radius: 5px;
+    margin-right: 25px;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
 }
 
-/* Contenedor del texto */
 .card-content {
-    width: 60%; /* Ocupa el resto del ancho */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Título del estudiante */
 .card-content h2 {
-    margin: 0;
-    font-size: 1.5em;
-    color: #333;
+    margin: 0 0 10px 0;
+    font-size: 3em; /* Título más grande */
+    color: #091f30; /* Color principal */
+    font-weight:300; /* Mayor peso de fuente */
 }
 
-/* Descripción */
 .card-content p {
-    margin: 5px 0;
-    color: #555;
+    margin: 8px 0;
+    color: #000000;
+    line-height: 1.6;
 }
 
-/* Frase dentro de la carta */
 .card-phrase {
     font-style: italic;
-    color: #777;
-    margin-top: 10px;
-    font-size: 1em;
+    color: #0b598d;
+    margin-top: 15px;
+    font-size: 1.1em;
 }
 
-/* Animación para el deslizamiento de las cartas */
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateY(20px); /* Deslizamiento desde abajo */
     }
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-/* Media Queries */
-
-/* Para pantallas de hasta 768px (tablets y móviles) */
+/* Media Queries para responsividad */
 @media (max-width: 768px) {
     .card {
-        width: 90%;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 90%;
+        padding: 20px;
     }
     .card-image {
-        width: 80%;
-        margin-bottom: 10px;
+        width: 70%;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
     .card-content {
         width: 100%;
     }
 }
 
-/* Para pantallas de hasta 480px (móviles pequeños) */
 @media (max-width: 480px) {
     .card {
-        width: 100%;
-        min-height: auto;
+        width: 95%;
         padding: 15px;
     }
     .card-image {
-        width: 100%;
+        width: 90%;
     }
     .card-content h2 {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
     .card-content p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
     .card-phrase {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 }

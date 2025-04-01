@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/header.css';
-import logo from '../assets/images/logo-central.png';
+import logo from '../assets/images/logo-central.svg';
 import Navbar from './Navbar.jsx';
 
 const Header = () => {
@@ -12,12 +12,11 @@ const Header = () => {
                         <img src={logo} alt="Logo" className="logo" />
                     </div>
                     <div>
-                        <h1 className="title">Haul Mawr</h1>
-                        <p className="subtitle">Instituto de Estudios superiores</p>
+                        <Navbar />
                     </div>
                 </div>
             </div>
-            <Navbar/>
+
         </header>
     );
 };

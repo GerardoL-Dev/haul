@@ -1,190 +1,201 @@
-/* home.css */
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna y profesional */
+    margin: 0;
+    padding: 0;
+    color: #dddada;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
 
-/* Contenedor general de la página de inicio */
 .home-container {
-    font-family: Arial, sans-serif;
-    padding: 0 20px;
-    background-color: #f1f1f1;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
 }
 
-/* Estilos para la sección hero */
-.hero {
-    background-color: #091f30;
-    color: white;
-    padding: 50px 20px;
+section {
+    padding: 80px 20px; /* Aumenta el padding para mayor espacio */
+}
+
+.section-title {
     text-align: center;
-    border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 60px; /* Aumenta el margen */
+    color: #ffffff;
+    font-size: 3em; /* Título más grande */
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 20px;
+    text-shadow: #071928 0px 0px 5px; /* Sombra de texto para mayor legibilidad */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+.section-title::after { /* Línea decorativa debajo del título */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #091f30;
 }
 
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+/* Hero Section */
+.hero {
+    background-image: url('../assets/images/welcome.jpeg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    padding: 200px 20px; /* Aumenta el padding */
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 31, 48, 0.3); /* Overlay más ligero */
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 900px; /* Ancho del contenido */
+    margin: auto;
+}
+
+.hero-title {
+    font-size: 3.5em; /* Título aún más grande */
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    line-height: 1.8;
 }
 
 .cta-button {
-    padding: 10px 20px;
-    background-color: #99e9f2;
-    color: #091f30;
+    background-color: #091f30;
+    color: white;
+    padding: 18px 35px; /* Botón más grande */
     border: none;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 1.2em;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: #3c6f8c;
-    color: white;
+    background-color: #071928;
+    transform: translateY(-2px); /* Ligero efecto de elevación */
 }
 
-/* Estilos para los programas académicos */
+/* Programas Académicos */
 .programs {
-    margin-bottom: 50px;
-}
-
-.programs h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    background-image: url('../assets/images/academic.jpeg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
 }
 
 .programs-list {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .program-card {
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco translúcido */
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Sombra más sutil */
+    padding: 40px; /* Aumenta el padding */
+    margin: 20px;
+    width: 320px;
     text-align: center;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px); /* Ligero efecto de elevación */
+}
+
+.program-title {
+    color: #002c4e;
+    font-size: 1.8em; /* Título más grande */
     margin-bottom: 20px;
 }
 
-.program-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.program-card p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+.program-description {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
 .program-button {
-    padding: 8px 15px;
     background-color: #091f30;
     color: white;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1.1em;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .program-button:hover {
-    background-color: #3c6f8c;
+    background-color: #071928;
+    transform: translateY(-2px);
 }
 
-/* Estilos para la sección de características */
+/* Características */
 .features {
-    margin-bottom: 50px;
-}
-
-.features h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    background-image: url('../assets/images/publi2.jpeg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
 }
 
 .feature-cards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .feature-card {
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco translúcido */
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Sombra más sutil */
+    padding: 40px; /* Aumenta el padding */
+    margin: 20px;
+    width: 320px;
     text-align: center;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-title {
+    color: #091f30;
+    font-size: 1.8em; /* Título más grande */
     margin-bottom: 20px;
 }
 
-.feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.feature-description {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
-.feature-card p {
-    font-size: 1rem;
-}
-
-/* Media Queries */
-
-/* Para pantallas de hasta 768px (tablets y móviles) */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .programs-list,
-    .feature-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .program-card,
-    .feature-card {
-        width: 90%;
-        max-width: 300px;
-    }
-}
-
-/* Para pantallas de hasta 480px (móviles pequeños) */
-@media (max-width: 480px) {
-    .hero {
-        padding: 30px 15px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .cta-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    .program-card,
-    .feature-card {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .program-card h3,
-    .feature-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .program-card p,
-    .feature-card p {
-        font-size: 0.9rem;
-    }
+/* Testimonios */
+.cards-section {
+    background-image: url('../assets/images/publi1.jpeg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
 }

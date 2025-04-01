@@ -36,7 +36,7 @@ const News = () => {
               {noticia.thumbnail ? (
                 <img src={noticia.thumbnail} alt="Imagen de la noticia" className="news-thumbnail" />
               ) : (
-                <div className="no-thumbnail-placeholder">Sin imagen disponible</div> // Mensaje cuando no hay imagen
+                <div className="no-thumbnail-placeholder"></div>
               )}
               
               <a href={noticia.link} target="_blank" rel="noopener noreferrer">Leer más</a>

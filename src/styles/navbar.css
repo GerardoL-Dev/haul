@@ -1,12 +1,16 @@
 /* Estilos generales del navbar */
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center;
+    padding: 0 1em; /* Ajusta el padding según sea necesario */
 }
 
 /* Contenedor principal del contenido dentro del navbar */
 .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* Lista de navegación */
@@ -16,6 +20,7 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-right: 2em; /* Asegura que haya algo de separación del borde derecho */
 }
 
 .navbar-list li {
@@ -64,13 +69,24 @@
 .submenu li a:hover {
     background-color: #f1f1f1;
 }
-
+.social-media-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre los iconos de redes sociales */
+    margin-right: 10px;
+}
+/* Estilos para los iconos de redes sociales */
+.social-icon{
+    width: 24px; /* Ajusta el tamaño según sea necesario */
+    height: 24px; /* Ajusta el tamaño según sea necesario */
+    transition: transform 0.3s ease;
+}
 /* Contenedor de búsqueda */
 .search-container {
     display: flex;
-    justify-content: end;
     align-items: center;
-    margin-right: 1em;
+    justify-content: flex-end; /* Alinea el input y botón al final */
+    margin-left: auto; /* Empuja el contenedor hacia el margen derecho */
 }
 
 /* Campo de entrada del buscador */
@@ -115,6 +131,7 @@
     .navbar-list {
         flex-direction: column;
         gap: 10px;
+        justify-content: center;
     }
     .search-container {
         justify-content: center;
