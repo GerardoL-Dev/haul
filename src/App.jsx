@@ -14,9 +14,10 @@ import Masters from "./components/postgraduate/Masters.jsx";
 import Doctorate from "./components/postgraduate/Doctorate.jsx";
 import News from "./components/news/News.jsx";
 import FAQ from "./components/Faq.jsx";
-
+import Login from "./components/Login.jsx";
 
 import "./App.css";  // Para estilos globales si los tienes
+
 
 
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/doctorate" element={<Doctorate />} />
         <Route path="/news" element={<News />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
 
