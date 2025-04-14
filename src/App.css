@@ -1,0 +1,30 @@
+/* index.css */
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos básicos de etiquetas */
+  body {
+    font-family: sans-serif;
+    line-height: 1.5;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Aseguramos que no haya texto subrayado por defecto en los enlaces */
+  a {
+    text-decoration: none;
+  }
+  
+  /* Ajustes en la apariencia de los botones */
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  

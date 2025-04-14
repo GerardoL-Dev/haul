@@ -1,0 +1,136 @@
+/* Contenedor principal */
+.careers-container {
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
+  /* Fondo con patrón repetido */
+  background-size: 150px auto;
+  /* Tamaño del fondo */
+  background-repeat: repeat;
+  /* Repite el fondo */
+  background-position: top left;
+  /* Posición inicial del fondo */
+  min-height: 100vh;
+  /* Altura mínima para ocupar toda la pantalla */
+  display: flex;
+  /* Layout flexible */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  justify-content: center;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
+  padding: 30px;
+  /* Espaciado externo */
+  box-sizing: border-box;
+  /* Incluye padding en el cálculo del tamaño */
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Color de fondo semitransparente */
+}
+
+/* Título principal */
+.careers-title {
+  font-size: 2rem;
+  /* Tamaño grande */
+  font-weight: bold;
+  /* Negrita */
+  color: white;
+  /* Texto blanco */
+  margin-bottom: 30px;
+  /* Espacio debajo del título */
+  text-align: center;
+  /* Centrado */
+}
+
+/* Contenedor de las tarjetas */
+.careers-grid {
+  display: grid;
+  /* Layout de cuadrícula */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Columnas adaptables */
+  gap: 20px;
+  /* Espacio entre tarjetas */
+  max-width: 1200px;
+  /* Ancho máximo */
+  width: 100%;
+  /* Ancho completo */
+  margin: 0 auto;
+  /* Centra horizontalmente */
+}
+
+/* Estilo de cada tarjeta */
+.career-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Fondo oscuro semitransparente */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  /* Sombra suave */
+  overflow: hidden;
+  /* Asegura que el contenido no se desborde */
+  transition: transform 0.3s ease;
+  /* Transición suave para efectos */
+  padding: 20px;
+  /* Espaciado interno */
+  text-align: center;
+  /* Centra el texto */
+  position: relative;
+  /* Para posicionar los botones flotantes */
+}
+
+/* Efecto al pasar el ratón sobre una tarjeta */
+.career-card:hover {
+  transform: translateY(-10px);
+  /* Efecto de elevación */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  /* Sombra más pronunciada */
+}
+
+/* Nombre de la carrera */
+.career-card h3 {
+  font-size: 1.5rem;
+  /* Tamaño mediano-grande */
+  color: #fff;
+  /* Texto blanco */
+  margin-bottom: 10px;
+  /* Espaciado debajo del título */
+}
+
+/* Etiquetas de Área, Idioma y Duración */
+.career-card .etiqueta {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Fondo blanco semitransparente */
+  color: white;
+  /* Texto blanco */
+  padding: 5px 10px;
+  /* Espaciado interno */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  margin-right: 5px;
+  /* Espaciado entre etiquetas */
+  margin-bottom: 10px;
+  /* Espaciado debajo de las etiquetas */
+}
+
+/* Descripción de la carrera */
+.career-card p {
+  font-size: 0.9rem;
+  /* Tamaño pequeño */
+  color: rgba(255, 255, 255, 0.8);
+  /* Texto blanco semitransparente */
+  margin: 0;
+  /* Quita los márgenes predeterminados */
+}
+
+/* Estilo para las imágenes */
+.career-card img {
+  width: 100%;
+  /* Ocupa todo el ancho */
+  height: 200px;
+  /* Altura fija */
+  object-fit: cover;
+  /* Ajusta la imagen sin deformarla */
+  border-radius: 5px;
+  /* Bordes redondeados */
+  margin-bottom: 15px;
+  /* Espaciado inferior */
+}

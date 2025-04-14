@@ -1,90 +1,210 @@
-/* login.css */
-
-.login-background { /* Nuevo contenedor para la imagen de fondo */
-    background-image: url('../assets/images/haul-back.jpg');
+/* Estilo del fondo del login */
+.login-background {
+    background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
     background-size: 150px auto;
     background-repeat: repeat;
     background-position: top left;
-    min-height: 100vh; /* Asegura que cubra toda la altura de la ventana */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.login-container {
-    max-width: 400px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo translúcido */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
-    text-align: center;
-}
-
-.login-container h2 {
-    font-size: 2em;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Contenedor principal del login */
+  .login-container {
+    width: 800px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Sección de información (izquierda) */
+  .login-info {
+    background-color: rgba(9, 31, 48, 0.90);
+    color: #ffffff;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 16px 0 0 16px;
+  }
+  
+  .login-info h2 {
+    font-size: 2.8em;
     margin-bottom: 20px;
-    color: #000000;
-    text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
-}
-
-.login-container form {
+    font-weight: 600;
+    letter-spacing: -1px;
+    opacity: 0.9;
+  }
+  
+  .login-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+  
+  /* Sección del formulario (derecha) */
+  .login-form-wrapper {
+    padding: 60px;
     display: flex;
     flex-direction: column;
-}
-
-.login-container label {
+    justify-content: center;
+    align-items: stretch;
+  }
+  
+  .login-form-wrapper form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    text-align: left;
-    color: #000000;
-    text-shadow: 2px 2px 6px rgba(169, 169, 169, 0.8);
-}
-
-.login-container input {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    gap: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .login-form-wrapper label {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 8px;
     font-size: 1em;
-}
-
-.login-container button {
+  }
+  
+  .login-form-wrapper input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    color: #091f30;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-form-wrapper input:focus {
+    outline: none;
+    border-color: #091f30;
+    box-shadow: 0 2px 4px rgba(60, 111, 140, 0.2);
+  }
+  
+  .login-form-wrapper input::placeholder {
+    color: #999;
+  }
+  
+  /* Botón de inicio de sesión */
+  .login-form-wrapper button[type="submit"] {
     background-color: #091f30;
     color: white;
-    padding: 12px 20px;
+    padding: 16px 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.login-container button:hover {
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 8px rgba(9, 31, 48, 0.3);
+  }
+  
+  .login-form-wrapper button[type="submit"]:hover {
     background-color: #3c6f8c;
-}
-
-/* Media Queries para Responsividad (adaptando el patrón de about.css) */
-@media (max-width: 768px) {
+    box-shadow: 0 6px 10px rgba(60, 111, 140, 0.3);
+  }
+  
+  /* Botón de Google */
+  .google-login-btn {
+    background-color: #4285f4; /* Color azul de Google */
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+  }
+  
+  .google-login-btn:hover {
+    background-color: #357ae8;
+    box-shadow: 0 6px 10px rgba(53, 122, 232, 0.3);
+  }
+  
+  /* Mensaje de error */
+  .login-error-overlay {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.85);
+    color: white;
+    padding: 18px 32px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    font-weight: 500;
+    animation: fadeOut 5s ease forwards;
+  }
+  
+  .login-error-overlay.success {
+    background-color: rgba(0, 150, 0, 0.85);
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 900px) {
     .login-container {
-        max-width: 90%;
-        margin: 30px auto;
-        padding: 20px;
+      grid-template-columns: 1fr;
     }
-
-    .login-container h2 {
-        font-size: 1.8em;
+  
+    .login-info {
+      border-radius: 16px 16px 0 0;
+      padding: 40px;
+      align-items: center;
+      text-align: center;
     }
-}
-
-@media (max-width: 480px) {
-    .login-container {
-        max-width: 95%;
-        padding: 15px;
+  
+    .login-form-wrapper {
+      padding: 40px;
+      border-radius: 0 0 16px 16px;
     }
-
-    .login-container h2 {
-        font-size: 1.6em;
+  }
+  
+  @media (max-width: 600px) {
+    .login-info h2 {
+      font-size: 2.4em;
     }
-}
+  
+    .login-info p {
+      font-size: 1em;
+    }
+  
+    .login-form-wrapper form {
+      gap: 20px;
+    }
+  
+    .login-form-wrapper label {
+      font-size: 0.95em;
+    }
+  
+    .login-form-wrapper input {
+      padding: 12px;
+    }
+  
+    .login-form-wrapper button[type="submit"] {
+      padding: 14px 25px;
+      font-size: 1em;
+    }
+  
+    .google-login-btn {
+      padding: 14px 25px;
+      font-size: 1em;
+    }
+  }

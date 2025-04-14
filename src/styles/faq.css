@@ -1,94 +1,82 @@
-/* Contenedor principal */
+/* Estilo general del contenedor principal */
 .faq-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg'); /* Fondo con patrón repetido */
+  background-size: 150px auto; /* Tamaño del fondo */
+  background-repeat: repeat; /* Repite el fondo */
+  background-position: top left; /* Posición inicial del fondo */
+  min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
+  display: flex; /* Layout flexible */
+  flex-direction: column; /* Organiza los elementos en columna */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  padding: 30px; /* Espaciado externo */
+  box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo semitransparente */
 }
 
-/* Título */
+/* Título de la sección FAQ */
 .faq-title {
-  text-align: center;
-  font-size: 24px;
-  color: #091f30;
-  margin-bottom: 20px;
-  font-weight: 600;
+  font-size: 2rem; /* Tamaño grande */
+  font-weight: bold; /* Negrita */
+  color: white; /* Texto blanco */
+  margin-bottom: 30px; /* Espacio debajo del título */
+  text-align: center; /* Centrado */
 }
 
-/* Cada ítem de la FAQ */
+/* Contenedor de cada pregunta */
 .faq-item {
-  border-bottom: 1px solid #d1d1d1;
-  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  margin-bottom: 15px; /* Espacio entre preguntas */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  transition: transform 0.3s ease; /* Transición suave para efectos */
+  width: 100%; /* Ancho completo del contenedor padre */
+  max-width: 800px; /* Ancho máximo para pantallas grandes */
+  min-width: 300px; /* Ancho mínimo para pantallas pequeñas */
 }
 
-/* Pregunta */
+.faq-item:hover {
+  transform: translateY(-5px); /* Efecto de elevación sutil */
+}
+
+/* Sección de la pregunta */
 .faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #091f30;
-  cursor: pointer;
-  transition: color 0.3s ease;
+  display: flex; /* Layout flexible */
+  justify-content: space-between; /* Distribuye espacio entre el texto y la flecha */
+  align-items: center; /* Alinea verticalmente */
+  padding: 15px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar sobre la pregunta */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
 }
 
-.faq-question:hover {
-  color: #3c6f8c;
+.faq-question h3 {
+  font-size: 1.2rem; /* Tamaño mediano */
+  color: white; /* Texto blanco */
+  margin: 0; /* Quita el margen predeterminado */
 }
 
-/* Flecha de expandir */
 .faq-arrow {
-  font-size: 18px;
-  font-weight: bold;
-  color: #3c6f8c;
+  font-size: 1.5rem; /* Tamaño grande para la flecha */
+  color: white; /* Flecha blanca */
+  font-weight: bold; /* Negrita */
 }
 
-/* Respuesta */
+/* Respuesta de la pregunta */
 .faq-answer {
-  font-size: 14px;
-  color: #333;
-  margin-top: 10px;
-  padding-left: 10px;
-  line-height: 1.5;
-  display: none; /* Oculto por defecto */
-  animation: fadeIn 0.3s ease-in-out;
+  padding: 15px; /* Espaciado interno */
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente */
+  color: white; /* Texto blanco */
+  font-size: 1rem; /* Tamaño de fuente */
+  line-height: 1.5; /* Espaciado entre líneas */
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
 }
 
-/* Animación de apertura */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-5px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+.faq-answer ul {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0; /* Quita el padding predeterminado */
 }
 
-/* Mostrar respuesta cuando está activa */
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-/* Media Queries para pantallas pequeñas */
-@media (max-width: 600px) {
-  .faq-container {
-      padding: 15px;
-  }
-
-  .faq-title {
-      font-size: 22px;
-  }
-
-  .faq-question {
-      font-size: 15px;
-  }
-
-  .faq-answer {
-      font-size: 13px;
-  }
+.faq-answer li {
+  margin-bottom: 10px; /* Espacio entre elementos de la lista */
 }

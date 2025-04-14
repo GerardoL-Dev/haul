@@ -1,0 +1,168 @@
+.manager-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.manager-inner {
+  width: 95%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.create-section,
+.carreras-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  height: fit-content;
+}
+
+.create-section h2,
+.carreras-section h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: white;
+  font-size: 0.9em;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: calc(100% - 12px);
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.815);
+  color: #091f30;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-container textarea {
+  resize: vertical;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  background-color: rgba(255, 255, 255, 0.959);
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #091f30;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+.carreras-list {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-left: 15px;
+}
+
+.carreras-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carreras-list li {
+  display: grid; /* Cambiado a grid para mejor control del ancho */
+  grid-template-columns: 2.8fr 1fr 0.5fr; /* Ajusta las columnas para usar el ancho */
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.carreras-list li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.carreras-list li strong {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9em;
+  grid-column: 1; /* Coloca el nombre en la primera columna */
+  white-space: nowrap; /* Evita que el texto se rompa */
+  overflow: hidden; /* Oculta el texto que excede el ancho */
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) si el texto es demasiado largo */
+}
+
+.carreras-list li .area-tag {
+  background-color: #091f30;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  grid-column: 2; /* Coloca el área en la segunda columna */
+  text-align: center; /* Centra el texto */
+}
+
+.carreras-list li .actions {
+  display: flex;
+  gap: 8px;
+  grid-column: 3; /* Coloca los botones en la tercera columna */
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+}
+
+.carreras-list li button.edit-btn,
+.carreras-list li button.delete-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carreras-list li button.edit-btn {
+  background-color: #091f30;
+}
+
+.carreras-list li button.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.carreras-list li button.delete-btn {
+  background-color: #d32f2f;
+}
+
+.carreras-list li button.delete-btn:hover {
+  background-color: #c62828;
+}

@@ -1,110 +1,138 @@
-/* Estilos generales del footer */
 .footer {
     background-color: #091f30;
     color: white;
-    padding: 40px 0; /* Aumenta el padding para mejor espaciado */
-    font-size: 1rem; /* Tamaño de fuente base */
-    line-height: 1.6; /* Mejora la legibilidad */
-}
-
-/* Contenedor principal del contenido del footer */
-.footer-content {
+    padding: 40px 20px 20px;
+    font-size: 1rem;
+  }
+  
+  .footer-content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenido */
-    padding: 0 20px; /* Añade padding horizontal */
-}
-
-/* Estilos de la sección izquierda del footer */
-.footer-left {
-    flex: 1; /* Permite que la sección izquierda crezca */
-    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 0 auto;
+  }
+  
+  .footer-left, .footer-center, .footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+  }
+  
+  .footer-left h3 {
+    color: #99e9f2;
+    margin-bottom: 10px;
+  }
+  
+  .footer-center h4, .footer-right h4 {
+    color: #99e9f2;
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact p {
+    margin: 6px 0;
     color: #d1d1d1;
-}
-
-.footer-left p {
-    margin-bottom: 10px; /* Espacio entre párrafos */
-}
-
-.footer-left a {
-    color: #99e9f2; /* Color de enlace */
-    text-decoration: none;
-}
-
-.footer-left a:hover {
-    text-decoration: underline; /* Subraya al pasar el ratón */
-}
-
-/* Estilos de la sección central del footer */
-.footer-center {
-    flex: 2; /* Permite que la sección central crezca más */
-    text-align: center; /* Centra el texto */
-}
-
-.footer-nav ul {
+  }
+  
+  .footer-nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Permite que los enlaces se envuelvan en pantallas pequeñas */
-}
-
-.footer-nav li {
-    margin: 0 15px; /* Espacio entre elementos de la lista */
-}
-
-.footer-nav a {
+  }
+  
+  .footer-nav li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-nav a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
+    transition: color 0.3s;
+  }
+  
+  .footer-nav a:hover {
     color: #99e9f2;
-}
-
-/* Estilos de la sección derecha del footer */
-.footer-right {
-    flex: 1; /* Permite que la sección derecha crezca */
-    text-align: right; /* Alinea el texto a la derecha */
-    color: #d1d1d1;
-}
-
-.footer-right p {
-    margin-bottom: 10px; /* Espacio entre párrafos */
-}
-
-.footer-right strong {
-    color: white; /* Resalta el texto importante */
-}
-
-/* Estilos de la información de contacto */
-.footer-contact {
-    margin-top: 20px; /* Espacio superior */
-}
-
-/* Media Queries para Responsividad */
-@media (max-width: 768px) {
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .newsletter-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .newsletter-form button {
+    padding: 10px 20px;
+    background-color: #99e9f2;
+    color: #091f30;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #66d9e8;
+  }
+  
+  .social-media {
+    margin-top: 20px;
+  }
+  
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .credits {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .credits a {
+    color: #99e9f2;
+    text-decoration: none;
+  }
+  
+  .credits a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: #cccccc;
+    font-size: 0.9rem;
+    border-top: 1px solid #1c3a4d;
+  }
+  
+  @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column; /* Apila las secciones en pantallas pequeñas */
-        align-items: center; /* Centra los elementos */
-        text-align: center; /* Centra el texto */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-
-    .footer-left,
-    .footer-right {
-        text-align: center; /* Centra el texto en pantallas pequeñas */
-        margin-bottom: 20px; /* Espacio entre secciones */
+  
+    .newsletter-form {
+      flex-direction: column;
+      align-items: stretch;
     }
-
-    .footer-nav ul {
-        flex-direction: column; /* Apila los enlaces en pantallas pequeñas */
-        align-items: center; /* Centra los enlaces */
+  
+    .social-icon {
+      margin: 10px;
     }
-
-    .footer-nav li {
-        margin: 10px 0; /* Espacio entre enlaces */
-    }
-}
+  }
+  

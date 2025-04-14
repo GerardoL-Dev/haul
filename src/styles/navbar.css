@@ -1,191 +1,102 @@
-/* Estilos generales del navbar */
+/* Estilos generales del Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em;
-    position: relative; /* Asegura que el z-index funcione correctamente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Alineación horizontal de todo */
 .navbar-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-list {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: 2em;
-    gap: 10px;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-list li {
-    text-align: center;
-    color: #091f30;
-    text-decoration: none;
-    position: relative;
-    font-size: 1rem;
-    transition: font-size 0.3s ease;
+.navbar-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar-list a {
-    color: #091f30;
-    text-decoration: none;
-    display: block;
-    padding: 8px 12px;
-    transition: all 0.3s ease;
+.navbar-list li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* sombreado suave */
+  color: #00aaff;
 }
 
-/* Submenú */
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    list-style: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 1000; /* Aumenta el z-index para que esté por encima de las imágenes */
-    min-width: 150px;
+/* Sección de acceso/login */
+.login-access {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.submenu-item:hover .submenu {
-    display: block;
+.user-email {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.submenu li {
-    padding: 8px 12px;
-    font-size: 0.9rem;
+.dashboard-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.submenu li a {
-    color: #091f30;
-    padding: 5px 10px;
+.dashboard-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00aaff;
 }
 
-.submenu li a:hover {
-    background-color: #f1f1f1;
+.logout-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Redes sociales */
-.social-media-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-right: 10px;
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00aaff;
 }
 
-.social-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+.login-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Buscador */
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-left: auto;
+.login-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00aaff;
 }
-
-.search-input {
-    padding: 5px 13px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    transition: all 0.3s ease;
-}
-
-.navbar-search-button {
-    border: black 1px solid;
-    background-color: #091f30;
-    color: white;
-    padding: 5px 13px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    margin-left: 8px;
-}
-
-.navbar-search-button:hover {
-    background-color: #3c6f8c;
-}
-
-.navbar-search-button:active {
-    background-color: white;
-    color: #091f30;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-    
-    .navbar-list {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    
-    .navbar-list li {
-        font-size: 0.9rem;
-        padding: 6px 10px;
-    }
-    
-    .navbar-list a {
-        padding: 6px 10px;
-    }
-    
-    .submenu {
-        position: static;
-        margin-left: 20px;
-    }
-    
-    .search-container {
-        width: 100%;
-        justify-content: center;
-        margin: 10px 0;
-    }
-    
-    .search-input {
-        width: 100%;
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-list li {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-    }
-    
-    .navbar-list a {
-        padding: 4px 8px;
-    }
-    
-    .submenu {
-        min-width: 120px;
-    }
-    
-    .submenu li {
-        font-size: 0.8rem;
-        padding: 4px 6px;
-    }
-    
-    .search-input {
-        width: 100%;
-        max-width: 150px;
-    }
-    
-    .navbar-search-button {
-        padding: 4px 10px;
-    }
-}
+  

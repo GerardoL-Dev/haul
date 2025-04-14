@@ -1,0 +1,62 @@
+/* Fondo oscuro traslúcido */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+  }
+  
+  /* Contenido del modal */
+  .modal-content {
+    background-color: rgba(0, 0, 0, 0.753);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+  }
+  
+  .modal-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Botones de acción */
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-cancel {
+    background-color: #dc3545; /* Rojo para cancelar */
+    color: white;
+  }
+  
+  .modal-cancel:hover {
+    background-color: #b02a37;
+  }
+  
+  .modal-confirm {
+    background-color: #28a745; /* Verde para confirmar */
+    color: white;
+  }
+  
+  .modal-confirm:hover {
+    background-color: #1e7e34;
+  }

@@ -1,10 +1,19 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import '../styles/contact.css';
-import contact from '../assets/images/contact.png'; // Asegúrate de que la ruta sea correcta
+
 
 const Contacto = () => {
   const [captchaToken, setCaptchaToken] = useState(null);
+  const mainRef = useRef(null); // ← referencia al formulario
+
+  // Efecto para desplazar al formulario cuando se carga la página
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollIntoView({ behavior: 'smooth' }); // hace foco suave
+      mainRef.current.focus(); // opcional: da foco por accesibilidad
+    }
+  }, []);
 
   const handleCaptcha = (token) => {
     setCaptchaToken(token);
@@ -20,7 +29,7 @@ const Contacto = () => {
   };
 
   return (
-    <div className="contact-container">
+    <div className="contact-container" ref={mainRef} tabIndex={-1}>
       <form onSubmit={handleSubmit} className="contact-form">
         <h2>Contacto</h2>
         <input type="text" placeholder="Nombre" required />
@@ -38,11 +47,10 @@ const Contacto = () => {
 
       {/* Imagen al lado */}
       <div className="contact-image">
-        <img src={contact} alt="Imagen de contacto" />
+        <img src="https://res.cloudinary.com/dbfrdhebo/image/upload/v1744552961/contact_rlncw8.png" alt="Imagen de contacto" />
       </div>
     </div>
   );
 };
 
 export default Contacto;
-

@@ -1,52 +1,117 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom"; // Correcto importando BrowserRouter desde react-router-dom
-import Header from "./components/Header.jsx";
-import Home from "./components/Home.jsx";
-import Footer from "./components/Footer.jsx";
-import About from "./components/About.jsx";  // Asegúrate de importar los componentes que uses
-import Contact from "./components/Contact.jsx";  // Asegúrate de importar los componentes que uses
-import Trainings from "./components/courses/Trainings.jsx";  // Ruta correcta // Asegúrate de importar los componentes que uses
-import Updates from "./components/courses/Updates.jsx"; 
-import DiplomaPrograms from "./components/courses/DiplomaPrograms.jsx";
-import Udegree from "./components/degree/Udegree.jsx"; // Asegúrate de importar los componentes que uses 
-import Specialization from "./components/postgraduate/Specialization.jsx"; // Asegúrate de importar los componentes que uses
-import Masters from "./components/postgraduate/Masters.jsx";
-import Doctorate from "./components/postgraduate/Doctorate.jsx";
-import News from "./components/news/News.jsx";
-import FAQ from "./components/Faq.jsx";
-import Login from "./components/Login.jsx";
+import React, { useState, useEffect, Suspense } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./config/firebase";
+import "../src/App.css";
 
-import "./App.css";  // Para estilos globales si los tienes
+// Componentes de layout y páginas cargadas bajo demanda
+const Header = React.lazy(() => import("./components/Header2.jsx"));
+const Footer = React.lazy(() => import("./components/Footer.jsx"));
+const Home = React.lazy(() => import("./components/Home.jsx"));
+const About = React.lazy(() => import("./components/About.jsx"));
+const Contact = React.lazy(() => import("./components/Contact.jsx"));
+const Careers = React.lazy(() => import("./components/Careers.jsx"));
+const News = React.lazy(() => import("./components/News.jsx"));
+const FAQ = React.lazy(() => import("./components/Faq.jsx"));
+const Login = React.lazy(() => import("./components/Login.jsx"));
+const Dashboard = React.lazy(() => import("./components/Dashboard.jsx"));
+const NoAccess = React.lazy(() => import("./components/NoAccess.jsx"));
+const Navbar = React.lazy(() => import("./components/Navbar")); // Importa el Navbar aquí
 
-
-
-
-
+// 🛡️ Rutas protegidas por rol
+const ProtectedRoute = React.lazy(() => import("./components/ProtectedRoute.jsx"));
 
 function App() {
-  return (
-    <div className="App">
+    const [user, setUser] = useState(null);
+    const [authLoading, setAuthLoading] = useState(true);
+    const navigate = useNavigate();
 
-      <Header />      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/trainings" element={<Trainings />} />
-        <Route path="/updates" element={<Updates />} />
-        <Route path="/diploma-programs" element={<DiplomaPrograms />}/>
-        <Route path="/lic" element={<Udegree/>} />
-        <Route path="/special" element={<Specialization/>} />
-        <Route path="/masters" element={<Masters />} />
-        <Route path="/doctorate" element={<Doctorate />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Footer />
+    useEffect(() => {
+        // Monitorear el estado de autenticación
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+            if (currentUser) {
+                setUser(currentUser); // Actualiza el estado del usuario
+                localStorage.setItem("user", JSON.stringify(currentUser));
+            } else {
+                setUser(null); // Limpia el estado si no hay usuario autenticado
+                localStorage.removeItem("user");
+            }
+            setAuthLoading(false); // Finaliza la carga
+        });
 
-    </div>
-  );
+        return () => unsubscribe();
+    }, []);
+
+    // Función para manejar el inicio de sesión exitoso
+    const handleLoginSuccess = async (userData, token) => {
+        setUser(userData); // Actualiza el estado del usuario
+        localStorage.setItem("user", JSON.stringify(userData));
+        localStorage.setItem("token", token);
+        navigate("/dashboard"); // Redirige al dashboard
+    };
+
+    // Función para cerrar sesión
+    const handleLogout = async () => {
+        try {
+            await signOut(auth); // Cierra la sesión en Firebase
+            setUser(null); // Limpia el estado del usuario
+            localStorage.removeItem("user"); // Elimina el usuario del localStorage
+            localStorage.removeItem("token"); // Elimina el token del localStorage
+            navigate("/login"); // Redirige al login
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error);
+        }
+    };
+
+    // Muestra un mensaje de carga mientras se verifica el estado del usuario
+    if (authLoading) {
+        return <div className="loading">Cargando sesión...</div>;
+    }
+
+    return (
+        <div className="App">
+            {/* Componentes de layout */}
+            <Suspense fallback={<div>Cargando...</div>}>
+                <Header />
+                <Navbar user={user} onLogout={handleLogout} /> {/* Pasa el estado del usuario y la función de logout al Navbar */}
+            </Suspense>
+
+            {/* Rutas */}
+            <Suspense fallback={<div>Cargando página...</div>}>
+                <Routes>
+                    {/* Rutas públicas */}
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/news" element={<News />} />
+                    <Route path="/faq" element={<FAQ />} />
+
+                    {/* Ruta de login */}
+                    <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+
+                    {/* Ruta protegida: Dashboard */}
+                    <Route
+                        path="/dashboard"
+                        element={
+                            <ProtectedRoute allowedRoles={["admin", "director"]}>
+                                <Dashboard user={user} />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    {/* Ruta para acceso denegado */}
+                    <Route path="/no-access" element={<NoAccess />} />
+                </Routes>
+            </Suspense>
+
+            {/* Footer */}
+            <Suspense fallback={<div>Cargando footer...</div>}>
+                <Footer />
+            </Suspense>
+        </div>
+    );
 }
 
 export default App;
+

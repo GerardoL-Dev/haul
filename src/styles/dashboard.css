@@ -1,0 +1,71 @@
+/* Estilo general del contenedor principal */
+.dashboard-container {
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg'); /* Fondo con patrón repetido */
+  background-size: 150px auto; /* Tamaño del fondo */
+  background-repeat: repeat; /* Repite el fondo */
+  background-position: top left; /* Posición inicial del fondo */
+  min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
+  display: grid; /* Layout de cuadrícula */
+  grid-template-columns: 1.6fr 6fr; /* Proporción entre sidebar y contenido principal */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: start; /* Alinea elementos hacia arriba */
+  gap: 2em; /* Espacio entre sidebar y contenido principal */
+  padding: 20px; /* Espaciado externo */
+  box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo semitransparente */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.534); /* Fondo oscuro semitransparente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  display: flex; /* Layout flexible */
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: flex-start; /* Alinea elementos hacia la izquierda */
+  padding: 20px; /* Espaciado interno */
+  height: fit-content; /* Ajusta la altura al contenido */
+}
+
+.sidebar-section {
+  width: 100%; /* Ocupa todo el ancho del sidebar */
+  margin-bottom: 15px; /* Espacio entre secciones */
+}
+
+.sidebar button {
+  background-color: transparent; /* Fondo transparente */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  padding: 12px 25px; /* Espaciado interno */
+  font-size: 1em; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: all 0.3s ease; /* Transición suave para múltiples propiedades */
+  text-align: left; /* Alinea el texto a la izquierda */
+  width: 100%; /* Ocupa todo el ancho del sidebar */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.sidebar button:hover {
+  background-color: #3c6f8c; /* Cambia el color al pasar el ratón */
+  box-shadow: 0 6px 10px rgba(60, 111, 140, 0.3); /* Sombra más pronunciada */
+  transform: translateY(-2px); /* Efecto de elevación sutil */
+}
+
+/* Main Section */
+.main-section {
+  background-color: rgba(0, 0, 0, 0.534); /* Misma transparencia que el sidebar */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  padding: 20px; /* Espaciado interno */
+  overflow-y: auto; /* Barra de desplazamiento si el contenido es largo */
+  height: fit-content; /* Ajusta la altura al contenido */
+}
+
+/* Estilo para el título dentro del main section */
+.section-title {
+  font-size: 1.8rem; /* Tamaño grande */
+  font-weight: bold; /* Negrita */
+  color: white; /* Texto blanco */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+

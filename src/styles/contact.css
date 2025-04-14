@@ -1,79 +1,86 @@
+/* Estilo general del contenedor principal */
 .contact-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg'); /* Fondo con patrón repetido */
+  background-size: 150px auto; /* Tamaño del fondo */
+  background-repeat: repeat; /* Repite el fondo */
+  background-position: top left; /* Posición inicial del fondo */
+  min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
+  display: flex; /* Layout flexible */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 30px; /* Espaciado externo */
+  box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo semitransparente */
 }
 
+/* Contenedor del formulario */
 .contact-form {
-  max-width: 500px;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  flex: 1;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  padding: 30px; /* Espaciado interno */
+  width: 100%; /* Ancho completo del contenedor padre */
+  max-width: 500px; /* Ancho máximo para pantallas grandes */
+  display: flex; /* Layout flexible */
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra horizontalmente */
 }
 
-h2 {
-  text-align: center;
-  font-size: 24px;
-  color: #333;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-input:focus, textarea:focus {
-  border-color: #0077cc;
-  box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
-  outline: none;
-}
-
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-button {
-  padding: 12px;
-  background: #0077cc;
+.contact-form h2 {
+  font-size: 2rem; /* Tamaño grande */
+  font-weight: bold; /* Negrita */
   color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  text-shadow: #091f30 0px 2px 4px; /* Texto blanco */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  text-align: center; /* Centrado */
 }
 
-button:hover {
-  background: #005fa3;
+.contact-form input,
+.contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.925); /* Fondo blanco semitransparente */
+  color: #091f30; /* Texto blanco */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  margin-bottom: 15px; /* Espacio entre campos */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 0.897); /* Cambia el fondo al enfocar */
+  outline: none; /* Quita el borde de enfoque predeterminado */
+}
+
+.contact-form button {
+  background-color: #091f30; /* Azul brillante */
+  color: white; /* Texto blanco */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave */
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.contact-form button:hover {
+  background-color: #007bff; /* Cambia el color al pasar el ratón */
+}
+
+/* Contenedor de la imagen */
+.contact-image {
+  display: flex; /* Layout flexible */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin-left: 30px; /* Espacio entre el formulario y la imagen */
 }
 
 .contact-image img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-image img {
-    max-width: 90%;
-    margin-top: 20px;
-  }
+  max-width: 100%; /* Ajusta el ancho máximo */
+  height: auto; /* Mantén la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }

@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/faq.css';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const mainRef = useRef(null); // ← referencia al contenedor
+
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollIntoView({ behavior: 'smooth' }); // hace foco suave
+      mainRef.current.focus(); // opcional: da foco por accesibilidad
+    }
+  }, []);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -54,7 +63,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="faq-container">
+    <div className="faq-container" ref={mainRef} tabIndex={-1}>
       <h2 className="faq-title">Preguntas Frecuentes</h2>
       {faqs.map((faq, index) => (
         <div className={`faq-item ${activeIndex === index ? 'active' : ''}`} key={index}>
@@ -70,4 +79,3 @@ const FAQ = () => {
 };
 
 export default FAQ;
-
