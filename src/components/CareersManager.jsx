@@ -5,7 +5,8 @@ import {
   editarCarrera,
   eliminarCarrera
 } from '../services/firestoreService';
-import Modal from '../components/Modal'; // Importamos el componente Modal
+import Modal from '../components/Modal'; // Modal para confirmaciones
+import MessageModal from '../components/MessageModal'; // Nuevo modal para mensajes
 import '../styles/careersManager.css';
 
 export default function CareersManager() {
@@ -22,10 +23,14 @@ export default function CareersManager() {
   });
   const [editandoId, setEditandoId] = useState(null);
 
-  // Estado para el modal
+  // Estado para el modal de confirmación
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [actionToConfirm, setActionToConfirm] = useState(null);
+
+  // Estado para el modal de mensajes
+  const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
+  const [messageModalMessage, setMessageModalMessage] = useState('');
 
   const areas = [
     "INFORMATICA", "CIENCIAS EXACTAS", "CIENCIAS NATURALES", "CIENCIAS ECONOMICAS", "DERECHO", "MARKETING",
@@ -178,31 +183,40 @@ export default function CareersManager() {
     setActionToConfirm(null);
   };
 
+  const closeMessageModal = () => {
+    setIsMessageModalOpen(false);
+  };
+
   const handleConfirm = () => {
     if (actionToConfirm) actionToConfirm(); // Ejecuta la acción confirmada
     closeModal();
   };
 
   const alertSuccess = (message) => {
-    setModalMessage(message);
-    setActionToConfirm(null); // Sin acción adicional
-    setIsModalOpen(true);
+    setMessageModalMessage(message);
+    setIsMessageModalOpen(true);
   };
 
   const alertError = (message) => {
-    setModalMessage(message);
-    setActionToConfirm(null); // Sin acción adicional
-    setIsModalOpen(true);
+    setMessageModalMessage(message);
+    setIsMessageModalOpen(true);
   };
 
   return (
     <div className="manager-container">
-      {/* Ventana modal */}
+      {/* Ventana modal de confirmación */}
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
         onConfirm={handleConfirm}
         message={modalMessage}
+      />
+
+      {/* Ventana modal de mensajes */}
+      <MessageModal
+        isOpen={isMessageModalOpen}
+        onClose={closeMessageModal}
+        message={messageModalMessage}
       />
 
       {/* Contenido principal */}

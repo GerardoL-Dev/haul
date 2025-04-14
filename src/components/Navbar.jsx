@@ -21,7 +21,7 @@ const Navbar = ({ user, onLogout }) => {
       <div className="login-access">
         {user ? (
           <>
-            {/* Mostrar correo del usuario y botón de logout */}
+            {/* Mostrar correo del usuario, enlace al Dashboard y botón de logout */}
             <span className="user-email">{user.email}</span>
             <Link to="/dashboard" className="dashboard-link">
               Dashboard

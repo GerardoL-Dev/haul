@@ -1,48 +1,35 @@
 /* styles/noAccess.css */
 
 .no-access-container {
-    background-image: url("https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg");
-    background-repeat: repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  
-  .no-access-box {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    padding: 2rem;
-  }
-  
-  .no-access-box h2 {
-    color: #5c0101;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 0 white;
-  }
-  
-  .no-access-box p {
-    color: #333;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .no-access-btn {
-    background-color: #5c0101;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .no-access-btn:hover {
-    background-color: #7d0303;
-  }
-  
+  background-image: url("https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg");
+  background-repeat: repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.no-access-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  padding: 2rem;
+  margin: 0 auto; /* Centrado horizontalmente si hay espacio extra */
+}
+
+.no-access-box h2 {
+  color: #5c0101;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 0 white;
+}
+
+.no-access-box p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5; /* Mejora la legibilidad */
+}
