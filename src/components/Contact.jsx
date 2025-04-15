@@ -1,44 +1,77 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import '../styles/contact.css';
-
+import MessageModal from "./MessageModal"; // Importa el modal
+import { agregarMensaje } from "../services/firestoreService"; // Importa la función para agregar mensajes
 
 const Contacto = () => {
   const [captchaToken, setCaptchaToken] = useState(null);
-  const mainRef = useRef(null); // ← referencia al formulario
+  const [modalMessage, setModalMessage] = useState(""); // Estado para el mensaje del modal
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
 
-  // Efecto para desplazar al formulario cuando se carga la página
-  useEffect(() => {
-    if (mainRef.current) {
-      mainRef.current.scrollIntoView({ behavior: 'smooth' }); // hace foco suave
-      mainRef.current.focus(); // opcional: da foco por accesibilidad
-    }
-  }, []);
-
+  // Función para manejar la verificación del captcha
   const handleCaptcha = (token) => {
     setCaptchaToken(token);
   };
 
-  const handleSubmit = (e) => {
+  // Función para manejar el envío del formulario
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Verifica que el captcha esté completado
     if (!captchaToken) {
-      alert("Por favor, completa el captcha.");
+      setModalMessage("Por favor, completa el captcha.");
+      setIsModalOpen(true);
       return;
     }
-    alert("Formulario enviado con éxito.");
+
+    // Obtiene los valores del formulario
+    const nombre = e.target.nombre.value;
+    const email = e.target.email.value;
+    const mensaje = e.target.mensaje.value;
+
+    try {
+      // Agrega el mensaje a Firestore
+      await agregarMensaje(email, nombre, mensaje);
+
+      // Limpia el formulario
+      e.target.reset();
+      setCaptchaToken(null); // Reinicia el captcha
+
+      // Muestra el modal con el mensaje de éxito
+      setModalMessage("Mensaje enviado con éxito.");
+      setIsModalOpen(true);
+    } catch (error) {
+      console.error("Error al enviar el mensaje:", error);
+      setModalMessage("Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.");
+      setIsModalOpen(true);
+    }
+  };
+
+  // Función para cerrar el modal y limpiar campos
+  const closeModal = () => {
+    setIsModalOpen(false); // Cierra el modal
   };
 
   return (
-    <div className="contact-container" ref={mainRef} tabIndex={-1}>
+    <div className="contact-container">
+      {/* Modal */}
+      <MessageModal
+        isOpen={isModalOpen}
+        onClose={closeModal} // Cierra el modal
+        message={modalMessage} // Mensaje a mostrar
+      />
+
+      {/* Formulario */}
       <form onSubmit={handleSubmit} className="contact-form">
         <h2>Contacto</h2>
-        <input type="text" placeholder="Nombre" required />
-        <input type="email" placeholder="Correo Electrónico" required />
-        <textarea placeholder="Mensaje" required />
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="email" name="email" placeholder="Correo Electrónico" required />
+        <textarea name="mensaje" placeholder="Mensaje" required />
         
         {/* hCaptcha */}
         <HCaptcha
-          sitekey="553c3b96-e65c-4d68-a1e6-b8c855f06c88"
+          sitekey={import.meta.env.VITE_HCAPTCHA_SITEKEY}
           onVerify={handleCaptcha}
         />
         
