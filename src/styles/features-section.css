@@ -1,0 +1,59 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sección de Características */
+.features-section {
+    background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553612/publi2_nizqsa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+    min-height: calc(100vh + 150px); /* Aumenta la altura en 150px */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Título de la sección */
+.section-title {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+/* Contenedor de las tarjetas */
+.feature-cards {
+    display: flex;
+    flex-direction: row; /* Tarjetas en horizontal */
+    flex-wrap: wrap; /* Permite que las tarjetas se apilen en pantallas pequeñas */
+    gap: 40px; /* Espacio aumentado a 40px */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para centrar las tarjetas */
+}
+
+/* Estilo individual de cada tarjeta */
+.feature-cards .card {
+    flex: 1; /* Permite que las tarjetas ocupen el espacio disponible */
+    min-width: 300px; /* Ancho mínimo para evitar que las tarjetas se contraigan demasiado */
+    max-width: 400px; /* Ancho máximo para mantener un diseño limpio */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+
+    .feature-cards {
+        padding: 0 20px; /* Añadir relleno para evitar que las tarjetas toquen los bordes */
+    }
+}

@@ -1,0 +1,111 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.testimonios {
+    background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553606/publi1_ppoiql.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Título */
+.testimonios-title {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+/* Tarjeta de testimonio */
+.testimonio-card {
+    background-color: #0000006c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+/* Contenido de la tarjeta */
+.testimonio-content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Imagen */
+.testimonio-image {
+    flex: 1;
+    max-width: 300px;
+}
+
+.testimonio-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Texto */
+.testimonio-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.testimonio-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.testimonio-text p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.testimonio-phrase {
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Indicadores */
+.testimonio-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff80;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #ffffff; /* Color destacado */
+}

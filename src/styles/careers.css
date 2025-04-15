@@ -2,12 +2,11 @@
 .careers-container {
   background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
   /* Fondo con patrón repetido */
-  background-size: 150px auto;
-  /* Tamaño del fondo */
-  background-repeat: repeat;
-  /* Repite el fondo */
-  background-position: top left;
-  /* Posición inicial del fondo */
+  background-size: 150px auto; /* Tamaño del fondo */
+  background-repeat: repeat; /* Repite el fondo */
+  background-position: top left; /* Posición inicial del fondo */
+  /* Centra el fondo */
+  background-attachment: fixed; /* Efecto parallax: fija el fondo mientras se hace scroll */
   min-height: 100vh;
   /* Altura mínima para ocupar toda la pantalla */
   display: flex;
@@ -24,6 +23,10 @@
   /* Incluye padding en el cálculo del tamaño */
   background-color: rgba(0, 0, 0, 0.05);
   /* Color de fondo semitransparente */
+  position: relative;
+  /* Necesario para asegurar compatibilidad con algunos navegadores */
+  z-index: 1;
+  /* Asegura que el contenido esté por encima del fondo */
 }
 
 /* Título principal */
@@ -38,6 +41,10 @@
   /* Espacio debajo del título */
   text-align: center;
   /* Centrado */
+  position: relative;
+  /* Asegura que el texto esté por encima del fondo */
+  z-index: 2;
+  /* Capa superior al fondo */
 }
 
 /* Contenedor de las tarjetas */
@@ -54,6 +61,10 @@
   /* Ancho completo */
   margin: 0 auto;
   /* Centra horizontalmente */
+  position: relative;
+  /* Asegura que las tarjetas estén por encima del fondo */
+  z-index: 2;
+  /* Capa superior al fondo */
 }
 
 /* Estilo de cada tarjeta */

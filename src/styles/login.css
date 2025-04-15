@@ -1,9 +1,12 @@
 /* Estilo del fondo del login */
 .login-background {
-    background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
-    background-size: 150px auto;
-    background-repeat: repeat;
-    background-position: top left;
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
+  /* Fondo con patrón repetido */
+  background-size: 150px auto; /* Tamaño del fondo */
+  background-repeat: repeat; /* Repite el fondo */
+  background-position: top left; /* Posición inicial del fondo */
+  /* Centra el fondo */
+  background-attachment: fixed; /* Efecto parallax: fija el fondo mientras se hace scroll */
     min-height: 100vh;
     display: flex;
     justify-content: center;

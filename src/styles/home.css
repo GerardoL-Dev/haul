@@ -1,151 +1,65 @@
-/* Estilos generales */
-:root {
-  --primary-color: #091f30;
-  --secondary-color: #071928;
-  --text-color: #666;
-  --white-translucent: rgba(255, 255, 255, 0.8);
-  --section-padding: 80px 0;
-  --card-gap: 30px;
-  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
   background-color: #f9f9f9;
+  color: #333;
   line-height: 1.6;
-  
 }
 
-main {
-  margin: 0;
-  padding: 0;
-  
-}
-
-section {
-  padding: var(--section-padding);
-  position: relative;
-  
-}
-
+/* Contenedor principal */
 .home-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  overflow: hidden;
-  
+  width: 100%;
 }
 
-/* Títulos de sección */
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #ffffff;
-  font-size: 2.5em;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Programas Académicos */
-.programs,
-.features,
-.cards-section {
+/* Sección de cada contenido */
+.section {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  /* Efecto parallax */
   min-height: 100vh;
   width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Añadir Espacio Entre Secciones */
-.programs + .features,
-.features + .cards-section {
-  margin-top: 95px; /* Franja blanca entre secciones */
-}
-
-.programs {
-  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744552878/academic_itppo7.jpg');
-}
-
-.features {
-  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553612/publi2_nizqsa.jpg');
-}
-
-.cards-section {
-  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553606/publi1_ppoiql.jpg');
-}
-
-.programs-list,
-.feature-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--card-gap);
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.program-card,
-.feature-card {
-  background-color: var(--white-translucent);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  padding: 30px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-.program-card:hover,
-.feature-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.section-title {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
 }
 
-.program-title,
-.feature-title {
-  font-size: 1.6em;
-  margin-bottom: 15px;
-  color: var(--primary-color);
+/* Espaciado entre secciones */
+.section+.section {
+  margin-top: 150px;
+  /* Espacio vertical entre secciones */
 }
 
-.program-description,
-.feature-description {
-  font-size: 1em;
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .programs-list,
-  .feature-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .section-title {
-    font-size: 2em;
-  }
-
-  .program-card,
-  .feature-card {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.8em;
-  }
+/* Franja Blanca */
+/* Franja Blanca con Efecto Parallax */
+.white-space {
+  height: 130px;
+  /* Altura de la franja */
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
+  background-size: cover;
+  /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen en el fondo */
+  background-attachment: fixed;
+  /* Efecto parallax */
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Color de fondo semitransparente */
 }

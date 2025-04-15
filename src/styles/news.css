@@ -1,17 +1,32 @@
 /* Estilo general del contenedor principal */
 .news-container {
-  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg'); /* Fondo con patrón repetido */
+  background-image: url('https://res.cloudinary.com/dbfrdhebo/image/upload/v1744553460/haul-back_lgt1fs.jpg');
+  /* Fondo con patrón repetido */
   background-size: 150px auto; /* Tamaño del fondo */
   background-repeat: repeat; /* Repite el fondo */
   background-position: top left; /* Posición inicial del fondo */
-  min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
-  display: flex; /* Layout flexible */
-  flex-direction: column; /* Organiza los elementos en columna */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-  padding: 30px; /* Espaciado externo */
-  box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
-  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo semitransparente */
+  /* Centra el fondo */
+  background-attachment: fixed; /* Efecto parallax: fija el fondo mientras se hace scroll */
+  min-height: 100vh;
+  /* Altura mínima para ocupar toda la pantalla */
+  display: flex;
+  /* Layout flexible */
+  flex-direction: column;
+  /* Organiza los elementos en columna */
+  justify-content: center;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
+  padding: 30px;
+  /* Espaciado externo */
+  box-sizing: border-box;
+  /* Incluye padding en el cálculo del tamaño */
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Color de fondo semitransparente */
+  position: relative;
+  /* Necesario para asegurar compatibilidad con algunos navegadores */
+  z-index: 1;
+  /* Asegura que el contenido esté por encima del fondo */
 }
 
 .title {
